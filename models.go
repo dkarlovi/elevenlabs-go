@@ -33,9 +33,13 @@ type Model struct {
 }
 
 type TextToSpeechRequest struct {
-	Text          string         `json:"text"`
-	ModelID       string         `json:"model_id,omitempty"`
-	VoiceSettings *VoiceSettings `json:"voice_settings,omitempty"`
+	Text               string         `json:"text"`
+	ModelID            string         `json:"model_id,omitempty"`
+	VoiceSettings      *VoiceSettings `json:"voice_settings,omitempty"`
+	PreviousRequestIds []string       `json:"previous_request_ids,omitempty"`
+	PreviousText       string         `json:"previous_text,omitempty"`
+	NextRequestIds     []string       `json:"next_request_ids,omitempty"`
+	NextText           string         `json:"next_text,omitempty"`
 }
 
 type GetVoicesResponse struct {
